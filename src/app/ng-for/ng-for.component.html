@@ -1,6 +1,8 @@
 <h3>*ngFor</h3>
-<ul *ngFor="let nome of nomes; let i= index">
-  <li>Nome da pessoa é: {{ nome }}, a posição é
-    {{i+1}}
+<button (click)="atualizar()">Atualizar</button>
+<ul *ngFor="let nome of nomes; let i= index;
+trackBy:meuSave">
+  <li>
+    Nome da pessoa é : {{ nome.nome }} com id {{ nome.id }}, está na posição {{ i+1 }}
   </li>
 </ul>
