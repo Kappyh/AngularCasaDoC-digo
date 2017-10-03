@@ -1,0 +1,18 @@
+<div [ngSwitch]="numero">
+  <p *ngSwitchCase="2">
+    A variável está com o valor {{ numero }}
+  </p>
+  <p *ngSwitchCase="3">
+    A variável está com o valor {{ numero }}
+  </p>
+  <p *ngSwitchCase="4">
+    A variável está com o valor {{ numero }}
+  </p>
+  <p *ngSwitchCase="5">
+    A variável está com o valor {{ numero }}
+  </p>
+  <p *ngSwitchDefault>Essa é mensagem padrão</p>
+</div>
+<button (click)="incrementarNumero()">
+  Incrementar número
+</button>

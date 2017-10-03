@@ -14,3 +14,14 @@
 <p *ngIf="getValor()">
   Treinamentos com a condicional *ngIf
 </p>
+
+<h3>Cursos</h3>
+<input type="text" [(ngModel)]="curso">
+<br>
+{{ curso }}
+<br>
+<p *ngIf="cursos.length === 0">Não temos curso disponível</p>
+<br>
+<p *ngIf="cursos.length > 0">Agora temos curso cadastrado</p>
+<br>
+<button (click)="addCurso()">Adicionar novo curso</button>

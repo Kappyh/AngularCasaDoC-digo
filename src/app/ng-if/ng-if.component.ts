@@ -8,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class NgIfComponent implements OnInit {
 
   public mostrarNome: boolean;
+  public cursos:Array<string>;
+  public curso: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.cursos = [];
   }
 
   mostrar(): void {
     this.mostrarNome = !this.mostrarNome;
+  }
+
+  public addCurso(curso){
+    this.cursos.push(curso);
   }
 
   getValor(): boolean {
