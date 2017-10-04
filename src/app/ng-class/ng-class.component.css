@@ -1,0 +1,9 @@
+.cor-fundo{
+    background-color: lightgray;
+}
+.cor-letra{
+    color: red;
+}
+.borda-paragrafo{
+    border: 2px solid green;
+}
