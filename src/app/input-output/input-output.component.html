@@ -1,0 +1,10 @@
+<h2>@Input() - @Output()</h2>
+
+<ul>
+  <a href="#" *ngFor="let item of menu"
+  (click)="enviarNome(item)">
+    <li>
+      {{ item }}
+    </li>
+  </a>
+</ul>

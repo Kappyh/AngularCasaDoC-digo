@@ -8,8 +8,13 @@ import { AlertaService } from './alerta/alerta.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'Livro Angular 2';
-  foto: string = 'favicon.ico';
+  public title: string = 'Livro Angular 2';
+  public foto: string = 'favicon.ico';
+  public desenvolvimento: Array<string> = [
+    'Angular', 'Javascript', 'Typescript',
+    'HTML', 'CSS', 'NodeJS'
+  ];
+  public valor: string;
 
   constructor(private _service: AlertaService) {
 
@@ -17,6 +22,10 @@ export class AppComponent {
 
   public enviarMsg(): void {
     this._service.msgAlerta();
+  }
+
+  public valorPassado(valorPassado) {
+    this.valor = valorPassado;
   }
 
 }
