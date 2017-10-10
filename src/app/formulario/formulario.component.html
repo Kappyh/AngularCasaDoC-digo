@@ -1,0 +1,38 @@
+<h2>Formulário</h2>
+<form (ngSubmit)="enviarDados()" #cadastro="ngForm" ngNativeValidate>
+  <div>
+    <label for="nome">Nome</label>
+    <input type="text" [(ngModel)]="contato.nome" id="nome" name="nome" #nome="ngModel" required>
+    <div *ngIf="nome.valid || nome.pristine">
+      <p>O valor do nome é obrigatório</p>
+    </div>
+    <br>
+    <div ngModelGroup="todosContatos" #todosContatos="ngModelGroup">
+      <label for="telefone">Telefone</label>
+      <input type="text" [(ngModel)]="contato.telefone" id="telefone" name=telefone #telefone="ngModel" required>
+      <br>
+      <div *ngIf="telefone.invalid && telefone.dirty">
+        <p>O número do telefone é obrigatorio</p>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" id="email" [(ngModel)]="contato.email" name="email" #email="ngModel">
+        <br>
+        <div *ngIf="email.pristine">
+          <p>O conteúdo do email foi alterado</p>
+        </div>
+        <br>
+        <div *ngIf="email.touched">
+          <p>O conteúdo do email foi alterado</p>
+        </div>
+        <button [disabled]="cadastro.form.invalid" type="submit">Enviar</button>
+      </div>
+    </div>
+  </div>
+</form>
+
+{{ todosContatos }}
+<p>{{ todosContatos.value|json }}</p>
+
+<!-- ngNativeValidate habilita a validação required 
+nativa do HTML5 -->
