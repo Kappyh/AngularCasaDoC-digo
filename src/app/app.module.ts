@@ -17,6 +17,9 @@ import { NgContentExemploComponent } from './ng-content-exemplo/ng-content-exemp
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { InputOutputComponent } from './input-output/input-output.component';
 import { FormularioComponent } from './formulario/formulario.component';
+import { DiComponent } from './di/di.component';
+import { NomeTecService } from './di/nome-tec/nome-tec.service';
+import { MeuLogService } from './di/meu-log/meu-log.service';
 
 @NgModule({
   declarations: [
@@ -33,13 +36,14 @@ import { FormularioComponent } from './formulario/formulario.component';
     NgContentExemploComponent,
     EventBindingComponent,
     InputOutputComponent,
-    FormularioComponent
+    FormularioComponent,
+    DiComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [AlertaService],
+  providers: [AlertaService,NomeTecService, MeuLogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
